@@ -64,4 +64,5 @@ public class HackerNewsConfig {
                 .minimumNumberOfCalls(minNumberOfCalls)
                 .failureRateThreshold(50.0f));
   }
+
 }
