@@ -10,6 +10,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.Comparator;
+
 import static java.lang.String.format;
 
 @Service
@@ -38,6 +40,7 @@ public class HackerNewsServiceImpl implements HackerNewsService {
         .retrieve()
         .bodyToFlux(Long.class)
         .flatMap(this::getStoryById)
+        .sort(Comparator.comparing(Stories::getTime).reversed())
         .take(LAST_100)
         .transformDeferred(CircuitBreakerOperator.of(circuitBreaker));
   }
