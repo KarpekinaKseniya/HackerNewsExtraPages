@@ -1,10 +1,10 @@
-import {getStories} from "../service/BackendRequest";
+import {getStories, getStory} from "../service/BackendRequest";
 
 export function createStoriesFunction() {
     return {
         stories: [],
+        story: {},
         isLoading: false,
-        err: null,
 
         fetchStories() {
             this.isLoading = true;
@@ -14,7 +14,17 @@ export function createStoriesFunction() {
                     this.isLoading = false;
                 });
             } catch (err) {
-                this.error = err.message;
+                console.log(err.message);
+            }
+        },
+
+        fetchStory(id) {;
+            try {
+                getStory(id).then((json) => {
+                    this.story = json;
+                });
+            } catch (err) {
+                console.log(err.message);
             }
         }
     };

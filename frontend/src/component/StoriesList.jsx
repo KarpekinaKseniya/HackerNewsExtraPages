@@ -82,7 +82,7 @@ const StoriesList = observer(() => {
                                         .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                         .map((row) => {
                                             return (
-                                                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                                                <TableRow key={row.code} onClick={() => window.location.href = `/${row.id}`}>
                                                     {columns.map((column) => {
                                                         const value = row[column.id];
                                                         return (
