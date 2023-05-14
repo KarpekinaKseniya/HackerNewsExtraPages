@@ -2,15 +2,13 @@
 
 ## Hacker News Project
 
-This project contain solution on testing task from  https://github.com/wgnet/wg_forge_backend with the addition of
-the developer's imagination.
+The official [Hacker News API][hacker-news-url] was used for the project.
 
 Project contains:
 
-* Table with information about cats.
-* Cats' colors statistic information
-* Cats' tail and whiskers statistic information
-* Ability to add cat's data with validation
+* Main page with the latest 100 hacker news.
+* After click on table row return information about specific news.
+* After click on comments with icon open show other comments in tree.
 
 ### Built With
 
@@ -23,7 +21,22 @@ Project contains:
 
 ## Getting Started
 
-For starting application prefer docker-compose.
+For starting application run services together or use docker-compose.
+
+### For run frontend and backend
+
+Inside the root directory, for run backend do a:
+
+```
+mvn spring-boot:run
+```
+
+Inside the root directory, for run frontend do a:
+
+```
+cd frontend
+npm start
+```
 
 ### Docker Instruction
 
@@ -45,10 +58,14 @@ Rebuild Docker Images
 docker-compose build
 ````
 
-Local:
+Backend Local:
 
 + http://localhost:8080/
-+ http://localhost:8080/swagger-ui/index.html
++ http://localhost:8080/swagger-ui.html
+
+Frontend Local:
+
++ http://localhost:3000/
 
 ## Contact
 
@@ -85,3 +102,5 @@ Local:
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
 [linkedin-url]: https://www.linkedin.com/in/kkarpekina
+
+[hacker-news-url]: https://github.com/HackerNews/API
